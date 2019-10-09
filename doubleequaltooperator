@@ -1,0 +1,26 @@
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    String s1 = "vipul";
+    String s2 = "vipul";
+    String s3 = "chavan";
+    String s4 = new String("vipul");
+    String s5 = new String(s4);
+    int i = 1;
+    int j = 2;
+    
+     System.out.println(s1+" "+s2+" "+s3+" "+s4+" "+s5);
+    System.out.println(s1 == s2);
+    System.out.println(s1 == s3);
+     System.out.println(s1 == s4);
+      System.out.println(s5 == s4);
+      
+      Main m1 = new Main();
+      Main m2 = new Main();
+      Main m3 = m2;
+      System.out.println(m1 == m2);
+      System.out.println(m3 == m2);
+  }
+}
