@@ -1,0 +1,53 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+import java.util.Map.Entry;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		HashMap<Integer,String> empid_name_map = new HashMap<Integer,String>();
+		empid_name_map.put(3,"vipul");
+		empid_name_map.put(2,"kedar");
+		empid_name_map.put(5,"mahadev");
+		empid_name_map.put(1,"vitthal");
+		System.out.println(empid_name_map);
+		
+		for(Map.Entry m:empid_name_map.entrySet()){
+		    System.out.println("key:"+m.getKey()+" value:"+m.getValue());
+		}
+		
+		Set<Entry<Integer, String>> empid_name_set = empid_name_map.entrySet();
+		System.out.println(empid_name_set);
+		
+		List<Entry<Integer, String>> empid_name_list = new ArrayList<Entry<Integer, String>>(empid_name_set);
+		System.out.println(empid_name_list);
+		
+		Comparator<Entry<Integer, String>> empid_name_comparator = new Comparator<Entry<Integer, String>>() {
+            
+            @Override
+            public int compare(Entry<Integer, String> e1, Entry<Integer, String> e2) {
+                String v1 = e1.getValue();
+                String v2 = e2.getValue();
+                return v1.compareTo(v2);
+            }
+        };
+        
+		Collections.sort(empid_name_list,empid_name_comparator);
+		
+		LinkedHashMap sorted_map = new LinkedHashMap();
+		
+		for(Entry entry:empid_name_list){
+		    sorted_map.put(entry.getKey(),entry.getValue());
+		}
+		
+		System.out.println(sorted_map);
+		//Set set1 = empid_name_map.keySet();
+		//System.out.println(set1);
+	}
+}
