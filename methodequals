@@ -1,0 +1,16 @@
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		String s1 = "vipul";
+		String s2 = "vipul";
+		String s3 = new String("vifpul");
+		
+		System.out.println(s1.equals(s2));
+		System.out.println(s1 == s2);
+		
+		
+		System.out.println(s1.equals(s3));
+		System.out.println(s1 == s3);
+	}
+}
