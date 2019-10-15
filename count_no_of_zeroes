@@ -1,0 +1,42 @@
+package sample;
+
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int acc_no;
+		int no_of_zeroes = 0;
+		String modified_string = "";
+		System.out.println("Enter the account number:");
+		
+		Scanner sc = new Scanner(System.in);
+		acc_no = sc.nextInt();
+		String a = acc_no + "";
+		StringBuffer account_no = new StringBuffer(a);
+		account_no = account_no.reverse();
+		int len_of_account_no = account_no.length();
+		
+		for(int i = len_of_account_no-1; i >=0; i--) {
+			if(account_no.charAt(i) == '0') {
+				modified_string = modified_string + account_no.charAt(i);
+				continue;
+			}
+			modified_string = modified_string + account_no.charAt(i);
+			for(int j = 1; j <= i;j++) {
+				modified_string = modified_string + '0';
+			}
+		}
+		
+		System.out.println("modified string:"+ modified_string);
+		
+		for(int i = 0; i < modified_string.length();i++) {
+			if(modified_string.charAt(i) == '0') {
+				no_of_zeroes = no_of_zeroes +1;
+			}
+		}
+		
+		System.out.println("no of zeroes:"+no_of_zeroes);
+	}
+}
