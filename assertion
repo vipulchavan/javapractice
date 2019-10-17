@@ -1,0 +1,22 @@
+package sample;
+
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double distance,velocity,time;
+		Scanner  sc = new Scanner(System.in);
+		System.out.println("Enter the distance:");
+		distance = sc.nextDouble();
+		System.out.println("Enter the velocity:");
+		velocity = sc.nextDouble();
+		//assert distance>0.0;
+		//assert velocity>0.0;
+		time = distance/velocity;
+		assert time>0.0 : "time is negative";
+		System.out.println("time is:"+time);
+	}
+}
+
